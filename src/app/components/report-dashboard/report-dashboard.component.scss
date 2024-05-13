@@ -1,0 +1,29 @@
+.report-dashboard {
+  border: 2px solid #b2b2b3;
+  background-color: #494949;
+  min-height: 100px;
+}
+
+.close {
+  border: 1px solid #5900ff8b;
+  background-color: #6d24f4;
+  color: white;
+}
+
+.header-history {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.report-paragraph {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+
+.report-history {
+  height: 250px;
+  overflow-y: auto;
+  color: white;
+}

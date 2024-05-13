@@ -1,0 +1,32 @@
+<div class="report-dashboard" *ngIf="command.report">
+  <div class="row text-end">
+    <div>
+      <button (click)="onCloseReport()" style="width: 50px">X</button>
+    </div>
+  </div>
+  <div class="row"><div class="p-3 header-history">Report</div></div>
+  <div class="row">
+    <div class="p-3 report-paragraph">
+      <span
+        >Toy Robot current status: {{ command?.axis.x }},{{ command?.axis.y }}
+        {{ command?.facing | facing }}
+      </span>
+    </div>
+  </div>
+  <hr style="color: white" />
+  <div class="row">
+    <div class="col-12 p-3 report-paragraph">
+      <span>Toy Robot history commands </span>
+    </div>
+    <div class="col-12 report-history">
+      <div *ngFor="let cmd of command?.history">
+        <span class="p-1 ps-2"> > </span> &nbsp;
+        <span>{{ cmd?.command }}</span> &nbsp;
+        <span *ngIf="cmd?.axis">{{ cmd?.axis.x }},</span>
+        <span *ngIf="cmd?.axis">{{ cmd?.axis.y }}</span
+        >&nbsp;
+        <span> {{ cmd?.facing | facing }} </span>
+      </div>
+    </div>
+  </div>
+</div>

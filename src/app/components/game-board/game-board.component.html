@@ -1,0 +1,52 @@
+<div class="d-flex" #gameBoard *ngIf="axisDimensions">
+  <div class="game-board">
+    <div
+      *ngFor="let yIndex of axisDimensions.y | rangeSize | reverse"
+      class="game-row"
+    >
+      <!-- Y axis legend-->
+      <div class="m-auto text-center d-none d-md-block" style="width: 60px">
+        {{ yIndex }}
+      </div>
+
+      <div
+        *ngFor="let xIndex of axisDimensions.x | rangeSize"
+        class="game-square"
+        [ngClass]="{
+          dark: (xIndex + yIndex) % 2 !== 0,
+          light: (xIndex + yIndex) % 2 === 0
+        }"
+      >
+        <div class="text-center">
+          <img
+            [ngClass]="{
+              'rotate-90': command.facing === facingEmum.EAST,
+              'rotate-180': command.facing === facingEmum.SOUTH,
+              'rotate-270': command.facing === facingEmum.WEST
+            }"
+            class="robot-img"
+            [src]="
+              command?.axis?.x === xIndex && command?.axis?.y === yIndex
+                ? 'assets/icons/toy-robot.png'
+                : 'assets/icons/empty.png'
+            "
+            alt="robot"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- X axis legend-->
+    <div class="d-none d-md-flex align-items-baseline">
+      <div style="height: 60px; width: 60px">
+        <img width="100%" src="assets/icons/compass.png" alt="compass" />
+      </div>
+      <div
+        class="x-info text-center"
+        *ngFor="let xIndex of axisDimensions.x | rangeSize"
+      >
+        <div>{{ xIndex }}</div>
+      </div>
+    </div>
+  </div>
+</div>

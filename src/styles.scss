@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  background-color: #cdcae5;
+}
+
+button {
+  font-size: 14px;
+  padding: 8px;
+  background-color: #5900ff8b;
+  border-radius: 8px;
+  border: 1px solid #5900ff8b;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 160px;
+  color: white;
+}
+
+button:not([disabled]):hover {
+  border: 1px solid #4400c2;
+  background-color: #7d44e68b;
+  cursor: pointer;
+}
+
+button[disabled] {
+  background-color: #5900ff3a;
+  cursor: not-allowed;
+}
+
+label {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+select {
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #5900ff8b; /* Set the desired border color */
+}
+
+select:focus {
+  border-color: #5900ff8b; /* Set the desired border color */
+}
+
+select.ng-invalid.ng-touched {
+  border: 2px solid rgb(182, 17, 17);
+}

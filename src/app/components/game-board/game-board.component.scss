@@ -1,0 +1,45 @@
+.game-board {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.game-row {
+  display: flex;
+}
+
+.game-square {
+  flex: 1;
+  aspect-ratio: 1;
+  border: 0.5px solid rgb(108, 102, 95);
+  max-width: 120px;
+}
+
+.x-info {
+  flex: 1;
+  aspect-ratio: 1;
+}
+
+.dark {
+  background-color: rgba(244, 255, 144, 0.616);
+}
+
+.light {
+  background-color: #5900ff3a;
+}
+
+.robot-img {
+  width: 100%;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.rotate-270 {
+  transform: rotate(270deg);
+}

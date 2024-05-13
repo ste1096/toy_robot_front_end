@@ -1,0 +1,81 @@
+<form [formGroup]="form">
+  <div class="row mb-3">
+    <div class="">
+      <label class="d-block"> Select place X*</label>
+      <select
+        #selectxplace
+        id="xplace"
+        formControlName="xplace"
+        (change)="selectxplace.blur()"
+      >
+        <option value="" selected>Select an option...</option>
+        <option
+          *ngFor="let xIndex of axisDimensions.x | rangeSize"
+          [value]="xIndex"
+        >
+          {{ xIndex }}
+        </option>
+      </select>
+    </div>
+    <div
+      class="error-message"
+      *ngIf="fControlPlaceX.invalid && fControlPlaceX.touched"
+    >
+      Initial X axis dimension is required!
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="">
+      <label class="d-block"> Select place Y*</label>
+      <select
+        #selectyplace
+        id="yplace"
+        formControlName="yplace"
+        (change)="selectyplace.blur()"
+      >
+        <option value="" selected>Select an option...</option>
+        <option
+          *ngFor="let yIndex of axisDimensions.y | rangeSize"
+          [value]="yIndex"
+        >
+          {{ yIndex }}
+        </option>
+      </select>
+      <div
+        class="error-message"
+        *ngIf="fControlPlaceY.invalid && fControlPlaceY.touched"
+      >
+        Initial Y axis dimension is required!
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="">
+      <label class="d-block"> Select place facing*</label>
+      <select
+        #selectfacing
+        id="facing"
+        formControlName="facing"
+        (change)="selectfacing.blur()"
+      >
+        <option value="" selected>Select an option...</option>
+        <option [value]="0">NORTH</option>
+        <option [value]="1">EAST</option>
+        <option [value]="2">SOUTH</option>
+        <option [value]="3">WEST</option>
+      </select>
+      <div
+        class="error-message"
+        *ngIf="fControlFacing.invalid && fControlFacing.touched"
+      >
+        Initial facing info is required!
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row mb-3">
+    <div class="text-center">
+      <button (click)="onPlace()" [disabled]="form.invalid">Place</button>
+    </div>
+  </div>
+</form>
